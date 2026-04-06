@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camila Cell Store</title>
     <script>
         // Redireciona para a página inicial
-        window.location.href = './';
+        var path = window.location.pathname;
+        var repo = '/Camila-Cell-Store';
+        
+        // Remove o repositório do path
+        if (path.startsWith(repo + '/')) {
+            path = path.substring(repo.length);
+        }
+        
+        // Se não for a raiz, redireciona para a raiz
+        if (path !== '/' && path !== '') {
+            window.location.replace(repo + '/');
+        }
     </script>
 </head>
 <body>
