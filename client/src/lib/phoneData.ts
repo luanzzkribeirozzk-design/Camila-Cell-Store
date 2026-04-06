@@ -4,21 +4,64 @@ export interface Phone {
   model: string;
   price: number;
   image: string;
+  images: string[];
   specs: string;
   color: string;
 }
 
-// URLs das imagens realistas geradas
-const iphone15ProMaxBlack = "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/apple-iphone-15-pro-max-black-5hRc4Tw82UJe89poxW974i.webp";
-const iphone15ProBlue = "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/apple-iphone-15-pro-blue-ZnZpNvWwdqiYbM55j6KNh5.webp";
-const samsungS24UltraBlack = "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/samsung-galaxy-s24-ultra-black-gsDtbcvrTUvEqBwpdPALwg.webp";
-const samsungS24Silver = "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/samsung-galaxy-s24-silver-Zvjrz29F7Watp5sGZGH7bU.webp";
-const motorolaEdge50ProBlack = "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/motorola-edge-50-pro-black-VUqLWZCZkc37ZTv5oS2nzB.webp";
-const xiaomi14UltraBlack = "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/xiaomi-14-ultra-black-dW99LehMtJkNZ66fywhWrc.webp";
-const oppoFindX7UltraBlack = "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/oppo-find-x7-ultra-black-BVLpoSjnww8XB3N8o65eFe.webp";
-const asusRogPhone8ProBlack = "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/asus-rog-phone-8-pro-black-aRHfuMeZbmwvvtGp57tnPU.webp";
-const nubiaRedMagic9ProBlack = "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/nubia-red-magic-9-pro-black-N2VJ5dMwKmg2owcu5yPYZm.webp";
-const samsungGalaxyA54Black = "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/samsung-galaxy-a54-black-cvwcW6uKAAchmVNSZzpfEN.webp";
+// URLs das imagens realistas geradas - iPhone 15 Pro Max
+const iphone15ProMaxImages = [
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/iphone-15-pro-max-front-BcsBZmzUuksLtDHvJJzzT7.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/iphone-15-pro-max-back-ftXdEKGKevQYNhmx8pCp99.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/iphone-15-pro-max-side-ZkLZESyQ9iK7358FUQFiGH.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/iphone-15-pro-max-detail-2VMPy4SX36DkezLqMUfRFG.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/iphone-15-pro-max-angle-E3DVfnwM3Yic2rQ5P2DdxU.webp"
+];
+
+// URLs das imagens realistas geradas - Samsung S24 Ultra
+const samsungS24UltraImages = [
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/samsung-s24-ultra-front-Bz5ysMheRktgGcY9uPRDdw.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/samsung-s24-ultra-back-UGfDTUpKGqmsih7WMGa3Kf.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/samsung-s24-ultra-side-dQ25vUeFcjsCokWhu8ifGC.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/samsung-s24-ultra-detail-oPsR5LMmjMrJe7v7Mkd5wY.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/samsung-s24-ultra-angle-T7EaFUnZHUVhy4mRVaT9xP.webp"
+];
+
+// URLs das imagens realistas geradas - Motorola Edge 50 Pro
+const motorolaEdge50ProImages = [
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/motorola-edge-50-pro-front-FMgZJyVdSJ4wVmLfYHyzyp.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/motorola-edge-50-pro-back-KsmkQjS5xUMpw628tMJj9H.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/motorola-edge-50-pro-side-eMBT82zMzyFBGMyzs72jaL.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/motorola-edge-50-pro-detail-eCdG42H7juWBHYHosr3Zy5.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/motorola-edge-50-pro-angle-cdmQBdEaHb8xKFJPRGeics.webp"
+];
+
+// URLs das imagens realistas geradas - Xiaomi 14 Ultra
+const xiaomi14UltraImages = [
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/xiaomi-14-ultra-front-M36MyrM5ojx3KUhvL4Xkjn.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/xiaomi-14-ultra-back-RQL5kVgxV5QUceMWQsaKek.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/xiaomi-14-ultra-side-kPH2t5TGbuer6xMte58rPf.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/xiaomi-14-ultra-detail-UGphsooKx2rscyj85PRCJt.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/xiaomi-14-ultra-angle-DcGmX4SYvJ9AGqsrqFQVsY.webp"
+];
+
+// URLs das imagens realistas geradas - Oppo Find X7 Ultra
+const oppoFindX7UltraImages = [
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/oppo-find-x7-ultra-front-ZL3vuVfhySvraBQvN7PpRd.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/oppo-find-x7-ultra-back-678UqkTczBNzLNjaG9DtKA.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/oppo-find-x7-ultra-side-KaB9tJdEPeNDaXUjKJKnmn.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/oppo-find-x7-ultra-detail-nTzeqJJMrkuieaMxpRxgyy.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/oppo-find-x7-ultra-angle-afKCwCqx5J2QBuFfT9jAqH.webp"
+];
+
+// URLs genéricas para outros modelos (usando primeira imagem como padrão)
+const genericPhoneImages = [
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/iphone-15-pro-max-front-BcsBZmzUuksLtDHvJJzzT7.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/iphone-15-pro-max-back-ftXdEKGKevQYNhmx8pCp99.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/iphone-15-pro-max-side-ZkLZESyQ9iK7358FUQFiGH.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/iphone-15-pro-max-detail-2VMPy4SX36DkezLqMUfRFG.webp",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663487928346/YM9me9YEnJAbg76FJmU6Cj/iphone-15-pro-max-angle-E3DVfnwM3Yic2rQ5P2DdxU.webp"
+];
 
 export const phones: Phone[] = [
   // Apple - 10 modelos
@@ -27,7 +70,8 @@ export const phones: Phone[] = [
     brand: "Apple",
     model: "iPhone 15 Pro Max",
     price: 7999,
-    image: iphone15ProMaxBlack,
+    image: iphone15ProMaxImages[0],
+    images: iphone15ProMaxImages,
     specs: "6.7\" Display | A17 Pro | 256GB | Câmera 48MP",
     color: "Titânio Preto"
   },
@@ -36,7 +80,8 @@ export const phones: Phone[] = [
     brand: "Apple",
     model: "iPhone 15 Pro",
     price: 6999,
-    image: iphone15ProBlue,
+    image: iphone15ProMaxImages[0],
+    images: iphone15ProMaxImages,
     specs: "6.1\" Display | A17 Pro | 256GB | Câmera 48MP",
     color: "Titânio Azul"
   },
@@ -45,7 +90,8 @@ export const phones: Phone[] = [
     brand: "Apple",
     model: "iPhone 15",
     price: 4999,
-    image: iphone15ProMaxBlack,
+    image: iphone15ProMaxImages[0],
+    images: iphone15ProMaxImages,
     specs: "6.1\" Display | A16 Bionic | 256GB | Câmera 48MP",
     color: "Preto"
   },
@@ -54,7 +100,8 @@ export const phones: Phone[] = [
     brand: "Apple",
     model: "iPhone 15 Plus",
     price: 5499,
-    image: iphone15ProBlue,
+    image: iphone15ProMaxImages[0],
+    images: iphone15ProMaxImages,
     specs: "6.7\" Display | A16 Bionic | 256GB | Câmera 48MP",
     color: "Azul"
   },
@@ -63,7 +110,8 @@ export const phones: Phone[] = [
     brand: "Apple",
     model: "iPhone 14 Pro",
     price: 5999,
-    image: iphone15ProBlue,
+    image: iphone15ProMaxImages[0],
+    images: iphone15ProMaxImages,
     specs: "6.1\" Display | A16 Bionic | 256GB | Câmera 48MP",
     color: "Roxo Profundo"
   },
@@ -72,7 +120,8 @@ export const phones: Phone[] = [
     brand: "Apple",
     model: "iPhone 14",
     price: 4299,
-    image: iphone15ProMaxBlack,
+    image: iphone15ProMaxImages[0],
+    images: iphone15ProMaxImages,
     specs: "6.1\" Display | A15 Bionic | 256GB | Câmera 12MP",
     color: "Meia-Noite"
   },
@@ -81,7 +130,8 @@ export const phones: Phone[] = [
     brand: "Apple",
     model: "iPhone 13 Pro",
     price: 4799,
-    image: iphone15ProBlue,
+    image: iphone15ProMaxImages[0],
+    images: iphone15ProMaxImages,
     specs: "6.1\" Display | A15 Bionic | 256GB | Câmera 12MP",
     color: "Ouro"
   },
@@ -90,7 +140,8 @@ export const phones: Phone[] = [
     brand: "Apple",
     model: "iPhone 13",
     price: 3799,
-    image: iphone15ProMaxBlack,
+    image: iphone15ProMaxImages[0],
+    images: iphone15ProMaxImages,
     specs: "6.1\" Display | A15 Bionic | 256GB | Câmera 12MP",
     color: "Rosa"
   },
@@ -99,7 +150,8 @@ export const phones: Phone[] = [
     brand: "Apple",
     model: "iPhone SE (3ª Gen)",
     price: 2499,
-    image: iphone15ProBlue,
+    image: iphone15ProMaxImages[0],
+    images: iphone15ProMaxImages,
     specs: "4.7\" Display | A15 Bionic | 128GB | Câmera 12MP",
     color: "Branco"
   },
@@ -108,7 +160,8 @@ export const phones: Phone[] = [
     brand: "Apple",
     model: "iPhone 12",
     price: 3299,
-    image: iphone15ProMaxBlack,
+    image: iphone15ProMaxImages[0],
+    images: iphone15ProMaxImages,
     specs: "6.1\" Display | A14 Bionic | 256GB | Câmera 12MP",
     color: "Azul"
   },
@@ -119,7 +172,8 @@ export const phones: Phone[] = [
     brand: "Samsung",
     model: "Galaxy S24 Ultra",
     price: 8499,
-    image: samsungS24UltraBlack,
+    image: samsungS24UltraImages[0],
+    images: samsungS24UltraImages,
     specs: "6.8\" Display | Snapdragon 8 Gen 3 | 256GB | Câmera 200MP",
     color: "Titânio Preto"
   },
@@ -128,7 +182,8 @@ export const phones: Phone[] = [
     brand: "Samsung",
     model: "Galaxy S24+",
     price: 6999,
-    image: samsungS24Silver,
+    image: samsungS24UltraImages[0],
+    images: samsungS24UltraImages,
     specs: "6.7\" Display | Snapdragon 8 Gen 3 | 256GB | Câmera 50MP",
     color: "Titânio Prata"
   },
@@ -137,7 +192,8 @@ export const phones: Phone[] = [
     brand: "Samsung",
     model: "Galaxy S24",
     price: 5999,
-    image: samsungS24UltraBlack,
+    image: samsungS24UltraImages[0],
+    images: samsungS24UltraImages,
     specs: "6.2\" Display | Snapdragon 8 Gen 3 | 256GB | Câmera 50MP",
     color: "Preto"
   },
@@ -146,7 +202,8 @@ export const phones: Phone[] = [
     brand: "Samsung",
     model: "Galaxy Z Fold 6",
     price: 9999,
-    image: samsungS24Silver,
+    image: samsungS24UltraImages[0],
+    images: samsungS24UltraImages,
     specs: "7.6\" Dobrável | Snapdragon 8 Gen 3 | 256GB | Câmera 50MP",
     color: "Preto"
   },
@@ -155,7 +212,8 @@ export const phones: Phone[] = [
     brand: "Samsung",
     model: "Galaxy Z Flip 6",
     price: 7999,
-    image: samsungS24UltraBlack,
+    image: samsungS24UltraImages[0],
+    images: samsungS24UltraImages,
     specs: "6.7\" Dobrável | Snapdragon 8 Gen 3 | 256GB | Câmera 50MP",
     color: "Azul Menta"
   },
@@ -164,7 +222,8 @@ export const phones: Phone[] = [
     brand: "Samsung",
     model: "Galaxy A54",
     price: 2799,
-    image: samsungGalaxyA54Black,
+    image: samsungS24UltraImages[0],
+    images: samsungS24UltraImages,
     specs: "6.4\" Display | Exynos 1280 | 128GB | Câmera 50MP",
     color: "Preto"
   },
@@ -173,7 +232,8 @@ export const phones: Phone[] = [
     brand: "Samsung",
     model: "Galaxy A34",
     price: 1999,
-    image: samsungS24Silver,
+    image: samsungS24UltraImages[0],
+    images: samsungS24UltraImages,
     specs: "6.6\" Display | MediaTek Helio G99 | 128GB | Câmera 48MP",
     color: "Violeta"
   },
@@ -182,7 +242,8 @@ export const phones: Phone[] = [
     brand: "Samsung",
     model: "Galaxy S23 Ultra",
     price: 7499,
-    image: samsungS24UltraBlack,
+    image: samsungS24UltraImages[0],
+    images: samsungS24UltraImages,
     specs: "6.8\" Display | Snapdragon 8 Gen 2 | 256GB | Câmera 200MP",
     color: "Verde Phantom"
   },
@@ -191,7 +252,8 @@ export const phones: Phone[] = [
     brand: "Samsung",
     model: "Galaxy S23",
     price: 5499,
-    image: samsungS24Silver,
+    image: samsungS24UltraImages[0],
+    images: samsungS24UltraImages,
     specs: "6.1\" Display | Snapdragon 8 Gen 2 | 256GB | Câmera 50MP",
     color: "Creme"
   },
@@ -200,7 +262,8 @@ export const phones: Phone[] = [
     brand: "Samsung",
     model: "Galaxy A24",
     price: 1599,
-    image: samsungGalaxyA54Black,
+    image: samsungS24UltraImages[0],
+    images: samsungS24UltraImages,
     specs: "6.5\" Display | MediaTek Helio G99 | 128GB | Câmera 50MP",
     color: "Preto"
   },
@@ -211,7 +274,8 @@ export const phones: Phone[] = [
     brand: "Motorola",
     model: "Edge 50 Pro",
     price: 4999,
-    image: motorolaEdge50ProBlack,
+    image: motorolaEdge50ProImages[0],
+    images: motorolaEdge50ProImages,
     specs: "6.7\" Display | Snapdragon 8 Gen 3 | 256GB | Câmera 50MP",
     color: "Preto Midnight"
   },
@@ -220,7 +284,8 @@ export const phones: Phone[] = [
     brand: "Motorola",
     model: "Edge 50 Ultra",
     price: 5999,
-    image: motorolaEdge50ProBlack,
+    image: motorolaEdge50ProImages[0],
+    images: motorolaEdge50ProImages,
     specs: "6.7\" Display | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Titânio Cinza"
   },
@@ -229,7 +294,8 @@ export const phones: Phone[] = [
     brand: "Motorola",
     model: "Edge 50",
     price: 3499,
-    image: motorolaEdge50ProBlack,
+    image: motorolaEdge50ProImages[0],
+    images: motorolaEdge50ProImages,
     specs: "6.5\" Display | Snapdragon 7 Gen 3 | 256GB | Câmera 50MP",
     color: "Azul Celeste"
   },
@@ -238,7 +304,8 @@ export const phones: Phone[] = [
     brand: "Motorola",
     model: "Razr 50 Ultra",
     price: 7999,
-    image: motorolaEdge50ProBlack,
+    image: motorolaEdge50ProImages[0],
+    images: motorolaEdge50ProImages,
     specs: "6.9\" Dobrável | Snapdragon 8 Gen 3 | 256GB | Câmera 50MP",
     color: "Preto"
   },
@@ -247,7 +314,8 @@ export const phones: Phone[] = [
     brand: "Motorola",
     model: "Razr 50",
     price: 5999,
-    image: motorolaEdge50ProBlack,
+    image: motorolaEdge50ProImages[0],
+    images: motorolaEdge50ProImages,
     specs: "6.9\" Dobrável | Snapdragon 7 Gen 3 | 256GB | Câmera 50MP",
     color: "Ouro"
   },
@@ -256,7 +324,8 @@ export const phones: Phone[] = [
     brand: "Motorola",
     model: "G54",
     price: 1799,
-    image: motorolaEdge50ProBlack,
+    image: motorolaEdge50ProImages[0],
+    images: motorolaEdge50ProImages,
     specs: "6.5\" Display | MediaTek Helio G99 | 128GB | Câmera 50MP",
     color: "Preto"
   },
@@ -265,7 +334,8 @@ export const phones: Phone[] = [
     brand: "Motorola",
     model: "G84",
     price: 2299,
-    image: motorolaEdge50ProBlack,
+    image: motorolaEdge50ProImages[0],
+    images: motorolaEdge50ProImages,
     specs: "6.7\" Display | Snapdragon 8 Gen 1 | 256GB | Câmera 50MP",
     color: "Azul Celeste"
   },
@@ -274,7 +344,8 @@ export const phones: Phone[] = [
     brand: "Motorola",
     model: "G73",
     price: 1999,
-    image: motorolaEdge50ProBlack,
+    image: motorolaEdge50ProImages[0],
+    images: motorolaEdge50ProImages,
     specs: "6.5\" Display | MediaTek Helio G99 | 128GB | Câmera 50MP",
     color: "Verde Menta"
   },
@@ -283,7 +354,8 @@ export const phones: Phone[] = [
     brand: "Motorola",
     model: "Edge 40 Pro",
     price: 4299,
-    image: motorolaEdge50ProBlack,
+    image: motorolaEdge50ProImages[0],
+    images: motorolaEdge50ProImages,
     specs: "6.7\" Display | Snapdragon 8 Gen 2 | 256GB | Câmera 50MP",
     color: "Preto"
   },
@@ -292,7 +364,8 @@ export const phones: Phone[] = [
     brand: "Motorola",
     model: "G53",
     price: 1499,
-    image: motorolaEdge50ProBlack,
+    image: motorolaEdge50ProImages[0],
+    images: motorolaEdge50ProImages,
     specs: "6.5\" Display | MediaTek Helio G99 | 128GB | Câmera 50MP",
     color: "Preto"
   },
@@ -303,7 +376,8 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     model: "14 Ultra",
     price: 6999,
-    image: xiaomi14UltraBlack,
+    image: xiaomi14UltraImages[0],
+    images: xiaomi14UltraImages,
     specs: "6.73\" Display | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -312,7 +386,8 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     model: "14 Pro",
     price: 5999,
-    image: xiaomi14UltraBlack,
+    image: xiaomi14UltraImages[0],
+    images: xiaomi14UltraImages,
     specs: "6.73\" Display | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Branco Pérola"
   },
@@ -321,7 +396,8 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     model: "14",
     price: 4999,
-    image: xiaomi14UltraBlack,
+    image: xiaomi14UltraImages[0],
+    images: xiaomi14UltraImages,
     specs: "6.36\" Display | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Dourado"
   },
@@ -330,7 +406,8 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     model: "Mix Fold 3",
     price: 9999,
-    image: xiaomi14UltraBlack,
+    image: xiaomi14UltraImages[0],
+    images: xiaomi14UltraImages,
     specs: "8.0\" Dobrável | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -339,7 +416,8 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     model: "13 Ultra",
     price: 5999,
-    image: xiaomi14UltraBlack,
+    image: xiaomi14UltraImages[0],
+    images: xiaomi14UltraImages,
     specs: "6.73\" Display | Snapdragon 8 Gen 2 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -348,7 +426,8 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     model: "Redmi Note 13 Pro",
     price: 2499,
-    image: xiaomi14UltraBlack,
+    image: xiaomi14UltraImages[0],
+    images: xiaomi14UltraImages,
     specs: "6.67\" Display | Snapdragon 7 Gen 3 | 256GB | Câmera 200MP",
     color: "Azul"
   },
@@ -357,7 +436,8 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     model: "Redmi Note 13",
     price: 1999,
-    image: xiaomi14UltraBlack,
+    image: xiaomi14UltraImages[0],
+    images: xiaomi14UltraImages,
     specs: "6.67\" Display | Snapdragon 685 | 256GB | Câmera 108MP",
     color: "Preto"
   },
@@ -366,7 +446,8 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     model: "Redmi 13",
     price: 1299,
-    image: xiaomi14UltraBlack,
+    image: xiaomi14UltraImages[0],
+    images: xiaomi14UltraImages,
     specs: "6.5\" Display | MediaTek Helio G99 | 128GB | Câmera 50MP",
     color: "Verde"
   },
@@ -375,7 +456,8 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     model: "13",
     price: 4299,
-    image: xiaomi14UltraBlack,
+    image: xiaomi14UltraImages[0],
+    images: xiaomi14UltraImages,
     specs: "6.36\" Display | Snapdragon 8 Gen 2 | 256GB | Câmera 50MP",
     color: "Branco"
   },
@@ -384,7 +466,8 @@ export const phones: Phone[] = [
     brand: "Xiaomi",
     model: "Poco X6 Pro",
     price: 2799,
-    image: xiaomi14UltraBlack,
+    image: xiaomi14UltraImages[0],
+    images: xiaomi14UltraImages,
     specs: "6.67\" Display | Snapdragon 8 Gen 2 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -395,7 +478,8 @@ export const phones: Phone[] = [
     brand: "Oppo",
     model: "Find X7 Ultra",
     price: 7999,
-    image: oppoFindX7UltraBlack,
+    image: oppoFindX7UltraImages[0],
+    images: oppoFindX7UltraImages,
     specs: "6.82\" Display | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -404,7 +488,8 @@ export const phones: Phone[] = [
     brand: "Oppo",
     model: "Find X7",
     price: 6999,
-    image: oppoFindX7UltraBlack,
+    image: oppoFindX7UltraImages[0],
+    images: oppoFindX7UltraImages,
     specs: "6.78\" Display | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Branco"
   },
@@ -413,7 +498,8 @@ export const phones: Phone[] = [
     brand: "Oppo",
     model: "Reno 11 Pro",
     price: 4999,
-    image: oppoFindX7UltraBlack,
+    image: oppoFindX7UltraImages[0],
+    images: oppoFindX7UltraImages,
     specs: "6.7\" Display | Snapdragon 8 Gen 2 | 256GB | Câmera 50MP",
     color: "Dourado"
   },
@@ -422,7 +508,8 @@ export const phones: Phone[] = [
     brand: "Oppo",
     model: "Reno 11",
     price: 3999,
-    image: oppoFindX7UltraBlack,
+    image: oppoFindX7UltraImages[0],
+    images: oppoFindX7UltraImages,
     specs: "6.7\" Display | Snapdragon 8 Gen 2 | 256GB | Câmera 50MP",
     color: "Preto"
   },
@@ -431,7 +518,8 @@ export const phones: Phone[] = [
     brand: "Oppo",
     model: "A78",
     price: 2199,
-    image: oppoFindX7UltraBlack,
+    image: oppoFindX7UltraImages[0],
+    images: oppoFindX7UltraImages,
     specs: "6.56\" Display | MediaTek Helio G99 | 128GB | Câmera 50MP",
     color: "Azul"
   },
@@ -440,7 +528,8 @@ export const phones: Phone[] = [
     brand: "Oppo",
     model: "A77",
     price: 1899,
-    image: oppoFindX7UltraBlack,
+    image: oppoFindX7UltraImages[0],
+    images: oppoFindX7UltraImages,
     specs: "6.56\" Display | MediaTek Helio G99 | 128GB | Câmera 50MP",
     color: "Preto"
   },
@@ -449,7 +538,8 @@ export const phones: Phone[] = [
     brand: "Oppo",
     model: "Find X6 Pro",
     price: 5999,
-    image: oppoFindX7UltraBlack,
+    image: oppoFindX7UltraImages[0],
+    images: oppoFindX7UltraImages,
     specs: "6.82\" Display | Snapdragon 8 Gen 2 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -458,7 +548,8 @@ export const phones: Phone[] = [
     brand: "Oppo",
     model: "Reno 10",
     price: 3499,
-    image: oppoFindX7UltraBlack,
+    image: oppoFindX7UltraImages[0],
+    images: oppoFindX7UltraImages,
     specs: "6.7\" Display | Snapdragon 8 Gen 1 | 256GB | Câmera 50MP",
     color: "Prata"
   },
@@ -467,7 +558,8 @@ export const phones: Phone[] = [
     brand: "Oppo",
     model: "A58",
     price: 1599,
-    image: oppoFindX7UltraBlack,
+    image: oppoFindX7UltraImages[0],
+    images: oppoFindX7UltraImages,
     specs: "6.72\" Display | MediaTek Helio G99 | 128GB | Câmera 50MP",
     color: "Preto"
   },
@@ -476,7 +568,8 @@ export const phones: Phone[] = [
     brand: "Oppo",
     model: "Reno 8 Pro",
     price: 3999,
-    image: oppoFindX7UltraBlack,
+    image: oppoFindX7UltraImages[0],
+    images: oppoFindX7UltraImages,
     specs: "6.7\" Display | Snapdragon 8 Gen 1 | 256GB | Câmera 50MP",
     color: "Preto"
   },
@@ -487,7 +580,8 @@ export const phones: Phone[] = [
     brand: "ROG Phone",
     model: "ROG Phone 8 Pro",
     price: 7999,
-    image: asusRogPhone8ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.78\" Display | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -496,7 +590,8 @@ export const phones: Phone[] = [
     brand: "ROG Phone",
     model: "ROG Phone 8",
     price: 6999,
-    image: asusRogPhone8ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.78\" Display | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Branco"
   },
@@ -505,7 +600,8 @@ export const phones: Phone[] = [
     brand: "ROG Phone",
     model: "ROG Phone 7 Ultimate",
     price: 6999,
-    image: asusRogPhone8ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.78\" Display | Snapdragon 8 Gen 2 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -514,7 +610,8 @@ export const phones: Phone[] = [
     brand: "ROG Phone",
     model: "ROG Phone 7",
     price: 5999,
-    image: asusRogPhone8ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.78\" Display | Snapdragon 8 Gen 2 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -523,7 +620,8 @@ export const phones: Phone[] = [
     brand: "ROG Phone",
     model: "ROG Phone 6D",
     price: 4999,
-    image: asusRogPhone8ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.78\" Display | Snapdragon 8+ Gen 1 | 256GB | Câmera 64MP",
     color: "Preto"
   },
@@ -532,7 +630,8 @@ export const phones: Phone[] = [
     brand: "ROG Phone",
     model: "ROG Phone 6 Pro",
     price: 5499,
-    image: asusRogPhone8ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.78\" Display | Snapdragon 8+ Gen 1 | 512GB | Câmera 64MP",
     color: "Preto"
   },
@@ -541,7 +640,8 @@ export const phones: Phone[] = [
     brand: "ROG Phone",
     model: "ROG Phone 6",
     price: 4799,
-    image: asusRogPhone8ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.78\" Display | Snapdragon 8+ Gen 1 | 256GB | Câmera 64MP",
     color: "Preto"
   },
@@ -550,7 +650,8 @@ export const phones: Phone[] = [
     brand: "ROG Phone",
     model: "ROG Phone 5s Pro",
     price: 3999,
-    image: asusRogPhone8ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.78\" Display | Snapdragon 888 | 256GB | Câmera 64MP",
     color: "Preto"
   },
@@ -559,7 +660,8 @@ export const phones: Phone[] = [
     brand: "ROG Phone",
     model: "ROG Phone 5s",
     price: 3599,
-    image: asusRogPhone8ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.78\" Display | Snapdragon 888 | 256GB | Câmera 64MP",
     color: "Preto"
   },
@@ -568,7 +670,8 @@ export const phones: Phone[] = [
     brand: "ROG Phone",
     model: "ROG Phone 5",
     price: 3299,
-    image: asusRogPhone8ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.78\" Display | Snapdragon 888 | 256GB | Câmera 64MP",
     color: "Preto"
   },
@@ -579,7 +682,8 @@ export const phones: Phone[] = [
     brand: "Red Magic",
     model: "Red Magic 9 Pro",
     price: 7999,
-    image: nubiaRedMagic9ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.85\" Display | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -588,7 +692,8 @@ export const phones: Phone[] = [
     brand: "Red Magic",
     model: "Red Magic 9",
     price: 6999,
-    image: nubiaRedMagic9ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.85\" Display | Snapdragon 8 Gen 3 | 512GB | Câmera 50MP",
     color: "Vermelho"
   },
@@ -597,7 +702,8 @@ export const phones: Phone[] = [
     brand: "Red Magic",
     model: "Red Magic 8S Pro",
     price: 6999,
-    image: nubiaRedMagic9ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.8\" Display | Snapdragon 8 Gen 2 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -606,7 +712,8 @@ export const phones: Phone[] = [
     brand: "Red Magic",
     model: "Red Magic 8 Pro",
     price: 5999,
-    image: nubiaRedMagic9ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.8\" Display | Snapdragon 8 Gen 2 | 512GB | Câmera 50MP",
     color: "Preto"
   },
@@ -615,7 +722,8 @@ export const phones: Phone[] = [
     brand: "Red Magic",
     model: "Red Magic 8",
     price: 4999,
-    image: nubiaRedMagic9ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.7\" Display | Snapdragon 8 Gen 2 | 256GB | Câmera 50MP",
     color: "Preto"
   },
@@ -624,7 +732,8 @@ export const phones: Phone[] = [
     brand: "Red Magic",
     model: "Red Magic 7S Pro",
     price: 4999,
-    image: nubiaRedMagic9ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.8\" Display | Snapdragon 8+ Gen 1 | 512GB | Câmera 64MP",
     color: "Preto"
   },
@@ -633,7 +742,8 @@ export const phones: Phone[] = [
     brand: "Red Magic",
     model: "Red Magic 7 Pro",
     price: 4499,
-    image: nubiaRedMagic9ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.8\" Display | Snapdragon 8+ Gen 1 | 256GB | Câmera 64MP",
     color: "Preto"
   },
@@ -642,7 +752,8 @@ export const phones: Phone[] = [
     brand: "Red Magic",
     model: "Red Magic 7",
     price: 3999,
-    image: nubiaRedMagic9ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.8\" Display | Snapdragon 8+ Gen 1 | 256GB | Câmera 64MP",
     color: "Preto"
   },
@@ -651,7 +762,8 @@ export const phones: Phone[] = [
     brand: "Red Magic",
     model: "Red Magic 6S Pro",
     price: 3499,
-    image: nubiaRedMagic9ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.8\" Display | Snapdragon 888 | 256GB | Câmera 64MP",
     color: "Preto"
   },
@@ -660,7 +772,8 @@ export const phones: Phone[] = [
     brand: "Red Magic",
     model: "Red Magic 6",
     price: 2999,
-    image: nubiaRedMagic9ProBlack,
+    image: genericPhoneImages[0],
+    images: genericPhoneImages,
     specs: "6.8\" Display | Snapdragon 888 | 256GB | Câmera 64MP",
     color: "Preto"
   }

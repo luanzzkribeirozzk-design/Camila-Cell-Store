@@ -2,6 +2,7 @@ import { useParams, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ShoppingCart, Star, Smartphone } from "lucide-react";
 import { phones } from "@/lib/phoneData";
+import { useState } from "react";
 
 /**
  * Design Philosophy: Futurismo Neon Cyberpunk
@@ -33,17 +34,13 @@ export default function ProductDetail() {
   const handleWhatsAppClick = () => {
     const message = `Olá Gostaria de comprar o modelo de celular ${phone.model} - Preço: R$ ${phone.price.toLocaleString("pt-BR")}`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/558398384187?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/5583981384187?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
   };
 
-  // Gerar variações de imagens para galeria
-  const galleryImages = [
-    phone.image,
-    phone.image,
-    phone.image,
-    phone.image,
-  ];
+  // Usar as 5 imagens do produto
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const galleryImages = phone.images && phone.images.length > 0 ? phone.images : [phone.image];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0A0E27] via-[#0F1535] to-[#0A0E27]">
@@ -71,18 +68,21 @@ export default function ProductDetail() {
                 <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl"></div>
               </div>
               <img
-                src={phone.image}
+                src={galleryImages[selectedImageIndex]}
                 alt={phone.model}
                 className="relative z-10 w-full h-96 object-cover rounded-lg drop-shadow-[0_0_30px_rgba(180,0,255,0.4)]"
               />
             </div>
 
             {/* Miniaturas */}
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-5 gap-4">
               {galleryImages.map((img, idx) => (
                 <div
                   key={idx}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-purple-500/20 rounded-lg overflow-hidden cursor-pointer hover:border-cyan-400/50 transition-all duration-300 p-2"
+                  onClick={() => setSelectedImageIndex(idx)}
+                  className={`bg-gradient-to-br from-gray-900/50 to-gray-800/50 border rounded-lg overflow-hidden cursor-pointer transition-all duration-300 p-2 ${
+                    selectedImageIndex === idx ? "border-cyan-400 drop-shadow-[0_0_15px_rgba(0,217,255,0.5)]" : "border-purple-500/20 hover:border-cyan-400/50"
+                  }`}
                 >
                   <img
                     src={img}
